@@ -1,0 +1,18 @@
+<html>
+<body>
+
+
+
+<form action="" method = "POST" >
+{% csrf_token %} <!-- crsf_token ต้องอยู๋ใน form เพื่อส่งคืน server -->
+<input type="hidden" name = "last_page" value="1">
+  Input Number:<br>
+  <input type="text" name = "N" value=""><br>
+  <input type="submit" value="Submit">
+</form>
+
+
+
+
+</body>
+</html>

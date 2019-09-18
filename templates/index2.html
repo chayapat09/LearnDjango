@@ -1,0 +1,15 @@
+<html>
+<body>
+<form action="" method = "POST" >
+{% csrf_token %} <!-- crsf_token ต้องอยู๋ใน form เพื่อส่งคืน server -->
+<input type="hidden" name = "last_page" value="2">
+{% for i in N %}
+  Input {{ i }}:<br>
+  <input type="text" name = "{{i}}" value=""><br>
+{% endfor %}
+  <input type="submit" value="Submit">
+</body>
+
+
+</body>
+</html>
