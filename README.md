@@ -4,7 +4,10 @@ Read / Write File :
 ```
 cat
 ```
-
+Create folder(sub-directory) :
+```
+mkdir <dir_name>
+```
 Wordcount :
 ```
 wc
@@ -17,6 +20,51 @@ head/tail [-lines]
 Unix Pipeline [ https://en.wikipedia.org/wiki/Pipeline_(Unix) ]
 ```
 process1 | process2 | process3
+```
+### Python OS (import os)
+Operating System commands
+
+To get string of current directory (get current working directory):
+```
+os.getcwd() (return <string>)
+```
+
+To change working directory same as cd in linux commands:
+
+```
+os.chdir(<string>) (return <None>)
+```
+
+To list files and folder on current directory :
+```
+os.listdir() (return list<string> )
+```
+
+Making directories :
+
+```
+os.mkdir(<string>) (return None)
+```
+ 
+Making with sub-directories that main directories doesn't exist
+
+```
+os.makedirs(<string>) (return None) Ex. os.makedirs('ABC/XYZ') #with ABC did't created before
+```
+
+Delete directories:
+```
+os.rmdir(<string>) (return None)
+```
+
+And this will remove all directories recursively 
+```
+os.removedirs(<string>) (return None) # main directory will be remove too!
+```
+
+Show avalible sub-commands of commans:
+```
+dir(<command>) #Ex . dir(os) will return list of xxx that os.xxx exists
 ```
 
 ### Python Virtual Environment Commands
