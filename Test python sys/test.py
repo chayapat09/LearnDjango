@@ -1,5 +1,8 @@
 import sys
+import os
 
 x = sys.argv
 
-print(x)
+os.mkdir(x[1])
+print("OK!")
+#print(x)

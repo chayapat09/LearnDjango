@@ -21,7 +21,7 @@ def index(request):
                                               } )
         elif last_page == '2':
             x = 0
-            L = []
+            L = []#List if Input
             while str(x) in request.POST:
                 try:
                     o = request.POST[str(x)]
@@ -29,7 +29,8 @@ def index(request):
                     HttpResponse("Throw Exception xxx")
                 L.append(o)
                 x += 1
-            L = L[::-1] # Return swap L
+            #L = L[::-1] # Return swap L
+            L = sorted(L)
             return render(request,'index3.html',{'L':L})
 
         else:
