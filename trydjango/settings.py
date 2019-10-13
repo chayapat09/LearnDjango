@@ -73,10 +73,20 @@ WSGI_APPLICATION = 'trydjango.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
-DATABASES = {
+'''DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}'''
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'trydjango',
+        'USER': 'root',
+        'PASSWORD': os.environ.get('mysql_root_password'),
+        'HOST': '', #Connecting with Unix domain socket
+        #'PORT': '3306',
     }
 }
 

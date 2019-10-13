@@ -131,3 +131,11 @@ To create new app :
 ```
 python manage.py startapp polls
 ```
+
+### ETCs
+
+fString : 
+```
+fstring = f'Example : { var } ' # { var } will be replace with value of var
+```
+
