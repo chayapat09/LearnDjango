@@ -1,10 +1,27 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.db import connection,IntegrityError
+
+def customsqlquery(query,*args):
+    c = connection.cursor()
+    #c.execute(query,args)
+    try: # This is OK but if there are more than one Exceptions ??
+        c.execute(query,args)
+        return "Successfuly Added"
+    except IntegrityError:
+        return "Username already exist"
+    else:
+        print("Error at sahanops/views sql_query")
+        return "Error"
+    finally:
+        c.close()
 
 def index(request):
     if request.method == "GET":
         #print(request.method)
         #return HttpResponse("Hello, world. You're at the polls index.")
+        query = """INSERT INTO testtable (username,password) VALUES (%s,%s)"""
+        print(customsqlquery(query,'nine','1235'))
         return render(request,'index.html',{'x':range(3),
                                         'Y':"PSG"})
 
